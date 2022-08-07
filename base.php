@@ -198,6 +198,7 @@ function dd($array){
 
 //宣告$Bottom為new DB
 $Bottom= new DB('bottom');//直接把bottom丟進$arg[] 請參考上面所設定的物件導向
+$Title=new DB('title')
 
 // print_r($Bottom->all("WHERE `id`='1'")); //不代參數、陣列型態、字串型態都可呈現想要的結果
 

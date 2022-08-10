@@ -18,10 +18,10 @@
                 <tr>
                     
                     <td >
-                        <input type="text" name="text" value="<?=$row['text'];?>">
+                        <input type="text" name="text[]" value="<?=$row['text'];?>">
                     </td>
                     <td >
-                        <input type="radio" name="sh[]" value="<?=$row['id'];?>">
+                        <input type="radio" name="sh" value="<?=$row['id'];?>">
                     </td>
                     <td >
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">

@@ -239,7 +239,7 @@ class Str{
                 $this->addBtn="新增校園映象圖片";
                 $this->addModalHeader="新增校園映象圖片";
                 $this->addModalcol=["校園映象圖片"];
-                break;
+                break; 
             case 'mvim':
                 break;
             case 'total':
@@ -263,6 +263,7 @@ class Str{
 $Bottom= new DB('bottom');//直接把bottom丟進$arg[] 請參考上面所設定的物件導向
 $Title=new DB('title');
 $Ad=new DB('ad');
+$Image=new DB('image');
 
 $Str=new Str($do);
 

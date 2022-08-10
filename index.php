@@ -1,4 +1,6 @@
-<?php include "base.php";?>
+<?php 
+$do=$_GET['do']??'main';
+include "base.php";?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0040)http://127.0.0.1/test/exercise/collage/? -->
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -33,7 +35,7 @@
 <!-- --------------------注意別寫錯--------------把不同頁面在同一頁顯示，因為只有中間那塊不同------------------------ -->
 				<?php 
 				// $do=isset($_GET['do'])?$_GET['do']:'main'; 簡寫為下行(網頁帶有do，使用do，否則用main，僅限isset等結果為true/false使用)
-				$do=$_GET['do']??'main';
+				// $do=$_GET['do']??'main';//網址載入優先於base.php載入較佳  故挪到最上方
 				$file="./front/".$do.".php";
 				if(file_exists($file)){         //以此判斷式修正輸入錯誤網址會跑出錯誤訊息在網頁上
 					include $file;

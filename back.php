@@ -1,4 +1,6 @@
-﻿<?php include "base.php";?>
+﻿<?php 
+$do=$_GET['do']??'title';
+include "base.php";?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0068)?do=admin&redo=title -->
@@ -32,7 +34,7 @@
                 <div id="menuput" class="dbor">
                     <!--主選單放此-->
                     <span class="t botli">後台管理選單</span>
-                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=tilte">
+                    <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title">
                         <!--當前頁可省略?前網址-->
                         <div class="mainmu">
                             網站標題管理 </div>
@@ -94,8 +96,9 @@
                 <!-- --------------------------------小心別改錯 -->
                 <?php 
 				// $do=isset($_GET['do'])?$_GET['do']:'main'; 簡寫為下行(網頁帶有do，使用do，否則用title，僅限isset等結果為true/false使用)
-				$do=$_GET['do']??'title';
+				// $do=$_GET['do']??'title';   網址載入優先於base.php載入較佳  故挪到最上方
 				$file="./back/".$do.".php";
+                // $Str=new Str($do);  挪到base.php
 				if(file_exists($file)){         //以此判斷式修正輸入錯誤網址會跑出錯誤訊息在網頁上
 					include $file;
 				}else{

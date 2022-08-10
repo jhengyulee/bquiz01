@@ -195,10 +195,76 @@ function dd($array){
     echo "</pre>";
 }
 
+//利用物件導向管理標題文字
+class Str{
+    public $header; 
+    public $imgHead;
+    public $textHead;
+    public $updateImg;
+    public $acc;
+    public $pw;
+    public $mainText;
+    public $mainHref;
+    public $subText;
+    public $subHref;
+    public $addBtn;
+    public $addModalHeader;
+    public $addModalcol;//用陣列方式處理
+    public $table;
+
+    public function __construct($table)
+    {
+        $this->table=$table;
+        switch($table){
+            case 'title':
+                $this->header="網站標題管理";
+                $this->imgHead="網站標題";
+                $this->textHead="替代文字";
+                $this->updateImg="更新圖片";
+                $this->addBtn="新增網站標題圖片";
+                $this->addModalHeader="新增標題區圖片";
+                $this->addModalcol=["標題區圖片","標題區替代文字"];
+                break;
+            case 'ad':
+                $this->header="動態文字廣告管理";
+                $this->textHead="動態文字廣告";
+                $this->addBtn="新增動態文字廣告";
+                $this->addModalHeader="新增動態文字廣告";
+                $this->addModalcol=["動態文字廣告"];
+                break;
+            case 'image':
+                $this->header="校園映象資料管理";
+                $this->imgHead="校園映象資料圖片";
+                $this->updateImg="更換圖片";
+                $this->addBtn="新增校園映象圖片";
+                $this->addModalHeader="新增校園映象圖片";
+                $this->addModalcol=["校園映象圖片"];
+                break;
+            case 'mvim':
+                break;
+            case 'total':
+                break;
+            case 'bottom':
+                break;
+            case 'news':
+                break;
+            case 'admin':
+                break;
+            case 'menu':
+                break;
+           
+        }
+    }
+    
+}
+
 
 //宣告$Bottom為new DB
 $Bottom= new DB('bottom');//直接把bottom丟進$arg[] 請參考上面所設定的物件導向
-$Title=new DB('title')
+$Title=new DB('title');
+$Ad=new DB('ad');
+
+$Str=new Str($do);
 
 // print_r($Bottom->all("WHERE `id`='1'")); //不代參數、陣列型態、字串型態都可呈現想要的結果
 

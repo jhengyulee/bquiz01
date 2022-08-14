@@ -25,7 +25,7 @@
                         <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                     </td>
                     <td >
-                        <input type="radio" name="sh" value="<?=$row['id'];?>">
+                        <input type="radio" name="sh" value="<?=$row['id'];?>" <?=($row['sh']==1)?'checked':'';?>> <!-- 欄位為1 而顯示被勾選的判斷-->
                     </td>
                     <td >
                         <input type="checkbox" name="del[]" value="<?=$row['id'];?>">

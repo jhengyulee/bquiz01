@@ -9,7 +9,15 @@ include_once "../base.php";
     <table>
         <tr>
             <td><?=$Str->addModalcol[0];?>:</td>
-            <td><input type="text" name="text"></td>
+            <td><input type="text" name="acc"></td>
+        </tr>
+        <tr>
+            <td><?=$Str->addModalcol[1];?>:</td>
+            <td><input type="text" name="pw"></td>
+        </tr>
+        <tr>
+            <td><?=$Str->addModalcol[2];?>:</td>
+            <td><input type="text" name="pw2"></td>
         </tr>
     
     </table>

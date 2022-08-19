@@ -300,4 +300,11 @@ $Str=new Str($do);
 // print_r($Bottom->all("WHERE `id`='1'")); //不代參數、陣列型態、字串型態都可呈現想要的結果
 
 
+//判斷訪客進站後到各頁面也不重複計算拜訪人數
+if(empty($_SESSION['view'])){
+    $view=$Total->find(1);
+    $view['view']++;
+    $Total->save($view);
+    $_SESSION['view']=1;
+}
 ?> 
